@@ -11,3 +11,7 @@ then
   systemctl start docker
 fi
 
+echo "Loading docker config..."
+rsync -avz --progress ~/tor-relay/config/etc/docker/ /etc/docker/
+systemctl restart docker
+
